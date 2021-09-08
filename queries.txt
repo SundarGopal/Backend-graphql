@@ -39,3 +39,19 @@ dateOfEntry,
 dateOfModify
 
   }}
+
+  #show all leave entries
+
+
+  {
+  leaves{
+   id,
+employeeId,
+startDate,
+endDate,
+count,
+year,
+dateOfEntry,
+dateOfModify,
+}
+}
