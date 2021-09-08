@@ -29,7 +29,7 @@ module.exports = {
   attendance: {
     type,
     args: {
-      employeeId: {
+      id: {
         type: GraphQLID
       }
     },
