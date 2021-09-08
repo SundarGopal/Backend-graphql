@@ -16,6 +16,7 @@ class Leaves extends DAO {
     static async getByID(_, {id}) {
         return await this.find(id)
     }
+    
 
     /**
      * Returns a list of bacons matching the passed fields
@@ -34,13 +35,15 @@ class Leaves extends DAO {
     /**
      * Creates a new bacon
      */
-    static async createEntry(_, {id,employeeId,startDate,endDate,count,year,dateOfEntry,dateOfModify}) {
+    static async createEntry(_, {id,employeeId,startDate,endDate,count,year}) {
         const connection = await mySQLWrapper.getConnectionFromPool()
         try {
             let _result = await this.insert(connection, {
                 data: {
-                    id,employeeId,startDate,endDate,count,year,dateOfEntry,dateOfModify
-                }
+                    id,employeeId,startDate,endDate,count,year
+                },
+                dateOfEntry:new Date(Date.now()).toISOString(),
+                dateOfModify: "1970-01-01T00:00:00.000Z"
             })
 
             return this.getByID(_, {id: _result.insertId})
@@ -53,15 +56,17 @@ class Leaves extends DAO {
     /**
      * Updates a bacon
      */
-    static async updateEntry(_, {id,employeeId,startDate,endDate,count,year,dateOfEntry,dateOfModify}) {
+    static async updateEntry(_, {id,employeeId,startDate,endDate,count,year}) {
         const connection = await mySQLWrapper.getConnectionFromPool()
         try {
 
             await this.update(connection, {
                 id,
                 data: {
-                    employeeId,startDate,endDate,count,year,dateOfEntry,dateOfModify
-                }
+                    employeeId,startDate,endDate,count,year
+                },
+                dateOfModify:new Date(Date.now()).toISOString()
+
             })
 
             return this.getByID(_, {id})
@@ -70,7 +75,7 @@ class Leaves extends DAO {
             if (connection != null) connection.release()
         }
     }
-    static async deleteEntry(_, {id,employeeId,monthYear,basic,hra,lta,variable,bonus,TDS,tax,total,workingDaysInMonth,dateOfEntry,dateOfModify}) {
+    static async deleteEntry(_, {id,employeeId,startDate,endDate,count,year,dateOfEntry,dateOfModify}) {
         const connection = await mySQLWrapper.getConnectionFromPool()
         try {
 

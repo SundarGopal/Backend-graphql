@@ -14,7 +14,7 @@ module.exports = {
     addEmployee: {
         type,
         args: {
-          id: { type: new GraphQLNonNull(GraphQLString) },
+          name: { type: new GraphQLNonNull(GraphQLString) },
           email: { type: new GraphQLNonNull(GraphQLString) },
           address: { type: new GraphQLNonNull(GraphQLString) },
           dateOfBirth:  { type: new GraphQLNonNull(GraphQLDate) },
@@ -22,9 +22,7 @@ module.exports = {
           education: { type: new GraphQLNonNull(GraphQLString) },
           type: { type: new GraphQLNonNull(GraphQLString) },
           role: { type: new GraphQLNonNull(GraphQLString) },
-          password: { type: new GraphQLNonNull(GraphQLString) },
-          dateOfEntry:  { type: new GraphQLNonNull(GraphQLDate) },
-          dateOfModify:  { type: new GraphQLNonNull(GraphQLDate) },
+          password: { type: new GraphQLNonNull(GraphQLString) }
 
         },
         resolve: Employee.createEntry.bind(Employee)
@@ -32,7 +30,7 @@ module.exports = {
     updateEmployee: {
         type,
         args: {
-            id:     { type: GraphQLID },
+            id:     { type:  GraphQLID },
             name: { type: new GraphQLNonNull(GraphQLString) },
             email: { type: new GraphQLNonNull(GraphQLString) },
             address: { type: new GraphQLNonNull(GraphQLString) },
@@ -41,9 +39,7 @@ module.exports = {
             education: { type: new GraphQLNonNull(GraphQLString) },
             type: { type: new GraphQLNonNull(GraphQLString) },
             role: { type: new GraphQLNonNull(GraphQLString) },
-            password: { type: new GraphQLNonNull(GraphQLString) },
-            dateOfEntry:  { type: new GraphQLNonNull(GraphQLDate) },
-            dateOfModify:  { type: new GraphQLNonNull(GraphQLDate) },
+            password: { type: new GraphQLNonNull(GraphQLString) }
         },
         resolve: Employee.updateEntry.bind(Employee)
     },

@@ -1,0 +1,141 @@
+# to add an employee to the list of employees.
+
+mutation{
+  addEmployee(
+    name:"James",
+    email:"james@yara.com",
+    address:"Hong Kong",
+    dateOfBirth:"1994-09-18T00:00:00.000Z",
+    dateOfJoining:"2021-08-01T00:00:00.000Z",
+    education:"MS",
+    type:"engineer",
+    role:"admin",
+    password:"admin",
+  ) {
+    id
+  }
+}
+
+
+# to update an employee in the list of employees.
+
+mutation{
+  updateEmployee(
+    id:9,
+    name:"Jamessssss1",
+    email:"jamesssss@yara.com",
+    address:"Hong Kong",
+    dateOfBirth:"1994-09-18T00:00:00.000Z",
+    dateOfJoining:"2021-08-01T00:00:00.000Z",
+    education:"MS",
+    type:"engineer",
+    role:"admin",
+    password:"admin",
+  ) {
+    id
+  }
+}
+
+
+# to add attendance of an employee 
+
+mutation{
+addAttendance(
+  employeeId:2,
+  date:"2021-08-01T00:00:00.000Z",
+  inTimeDate:"09:00",
+  outTime:"16:00",
+  totalHours:7){
+    id
+  }
+  
+}
+
+# to update attendacne of an employee 
+
+mutation{
+updateAttendance(
+  id:11,
+  employeeId:2,
+  date:"2019-08-01T00:00:00.000Z",
+  inTimeDate:"09:00",
+  outTime:"16:00",
+  totalHours:7){
+    id,
+    date
+  }
+  
+}
+
+
+# to add salary of an employee    
+
+mutation{
+addSalary(
+  employeeId:5,
+  monthYear:"Jun 2021",
+  basic:1000,
+  hra:1000,
+  lta:1000,
+  variable:1000,
+  bonus:1000,
+  TDS:1000,
+  tax:1000,
+  total:5000,
+  workingDaysInMonth:18
+){
+  id
+}
+}
+
+# to update salary of an employee
+
+
+mutation{
+updateSalary(
+  id:9,
+  employeeId:5,
+  monthYear:"July 2021",
+  basic:1000,
+  hra:1000,
+  lta:1000,
+  variable:1000,
+  bonus:1000,
+  TDS:1000,
+  tax:1000,
+  total:5000,
+  workingDaysInMonth:18
+){
+  id,
+  monthYear
+}
+}
+
+# to add leave for an employee 
+
+mutation{
+  addLeave(
+    employeeId:1,
+    startDate:"2019-08-01T00:00:00.000Z",
+    endDate:"2019-08-02T00:00:00.000Z",
+    count:2,
+    year:"2019"
+  ){
+    id
+  }
+}
+
+# to update leave of an employee  
+
+mutation{
+  updateLeave(
+    id:6,
+    employeeId:1,
+    startDate:"2020-08-01T00:00:00.000Z",
+    endDate:"2020-08-02T00:00:00.000Z",
+    count:2,
+    year:"2020"
+  ){
+    id
+  }
+}

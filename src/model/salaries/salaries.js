@@ -34,13 +34,15 @@ class Salaries extends DAO {
     /**
      * Creates a new bacon
      */
-    static async createEntry(_, {id,employeeId,monthYear,basic,hra,lta,variable,bonus,TDS,tax,total,workingDaysInMonth,dateOfEntry,dateOfModify}) {
+    static async createEntry(_, {id,employeeId,monthYear,basic,hra,lta,variable,bonus,TDS,tax,total,workingDaysInMonth}) {
         const connection = await mySQLWrapper.getConnectionFromPool()
         try {
             let _result = await this.insert(connection, {
                 data: {
-                    id,employeeId,monthYear,basic,hra,lta,variable,bonus,TDS,tax,total,workingDaysInMonth,dateOfEntry,dateOfModify
-                }
+                    id,employeeId,monthYear,basic,hra,lta,variable,bonus,TDS,tax,total,workingDaysInMonth
+                },
+                dateOfEntry:new Date(Date.now()).toISOString(),
+                dateOfModify: "1970-01-01T00:00:00.000Z"
             })
 
             return this.getByID(_, {id: _result.insertId})
@@ -53,15 +55,16 @@ class Salaries extends DAO {
     /**
      * Updates a bacon
      */
-    static async updateEntry(_, {id,employeeId,monthYear,basic,hra,lta,variable,bonus,TDS,tax,total,workingDaysInMonth,dateOfEntry,dateOfModify}) {
+    static async updateEntry(_, {id,employeeId,monthYear,basic,hra,lta,variable,bonus,TDS,tax,total,workingDaysInMonth}) {
         const connection = await mySQLWrapper.getConnectionFromPool()
         try {
 
             await this.update(connection, {
                 id,
                 data: {
-                    employeeId,monthYear,basic,hra,lta,variable,bonus,TDS,tax,total,workingDaysInMonth,dateOfEntry,dateOfModify
-                }
+                    employeeId,monthYear,basic,hra,lta,variable,bonus,TDS,tax,total,workingDaysInMonth
+                },
+                dateOfModify:new Date(Date.now()).toISOString()
             })
 
             return this.getByID(_, {id})

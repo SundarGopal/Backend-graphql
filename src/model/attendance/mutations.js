@@ -14,11 +14,10 @@ module.exports = {
     addAttendance: {
         type,
         args: {
-          id: { type: new GraphQLNonNull(GraphQLID) },
           employeeId:  { type: new GraphQLNonNull(GraphQLID) },
           date:  { type: new GraphQLNonNull(GraphQLDate) },
-          inTimeDate:  { type: new GraphQLNonNull(GraphQLDate) },
-          outTime: { type: new GraphQLNonNull(GraphQLDate) },
+          inTimeDate:  { type: new GraphQLNonNull(GraphQLString) },
+          outTime: { type: new GraphQLNonNull(GraphQLString) },
           totalHours: { type: new GraphQLNonNull(GraphQLFloat) },
 
         },
@@ -27,11 +26,11 @@ module.exports = {
     updateAttendance: {
         type,
         args: {
-            id: { type: new GraphQLNonNull(GraphQLString) },
+            id:     { type:  GraphQLID },
             employeeId:  { type: new GraphQLNonNull(GraphQLID) },
             date:  { type: new GraphQLNonNull(GraphQLDate) },
-            inTimeDate:  { type: new GraphQLNonNull(GraphQLDate) },
-            outTime: { type: new GraphQLNonNull(GraphQLDate) },
+            inTimeDate:  { type: new GraphQLNonNull(GraphQLString) },
+            outTime: { type: new GraphQLNonNull(GraphQLString) },
             totalHours: { type: new GraphQLNonNull(GraphQLFloat) },
         },
         resolve: Attendance.updateEntry.bind(Attendance)

@@ -15,7 +15,6 @@ module.exports = {
         type,
         args: {
 
-              id:  { type: new GraphQLNonNull(GraphQLID) },
                 employeeId:  { type: new GraphQLNonNull(GraphQLID) },
                   monthYear:  { type: new GraphQLNonNull(GraphQLString) },
                     basic:  { type: new GraphQLNonNull(GraphQLFloat) },
@@ -26,16 +25,14 @@ module.exports = {
                       TDS:  { type: new GraphQLNonNull(GraphQLFloat) },
                       tax:  { type: new GraphQLNonNull(GraphQLFloat) },
                       total:  { type: new GraphQLNonNull(GraphQLFloat) },
-                      workingDaysInMonth:  { type: new GraphQLNonNull(GraphQLFloat) },
-                      dateOfEntry:  { type: new GraphQLNonNull(GraphQLDate) },
-                      dateOfModify:  { type: new GraphQLNonNull(GraphQLDate) },
+                      workingDaysInMonth:  { type: new GraphQLNonNull(GraphQLFloat) }
         },
         resolve: Salary.createEntry.bind(Salary)
     },
     updateSalary: {
         type,
         args: {
-          id:  { type: new GraphQLNonNull(GraphQLID) },
+          id:  { type: GraphQLID },
           employeeId:  { type: new GraphQLNonNull(GraphQLID) },
             monthYear:  { type: new GraphQLNonNull(GraphQLString) },
               basic:  { type: new GraphQLNonNull(GraphQLFloat) },
@@ -46,9 +43,8 @@ module.exports = {
                 TDS:  { type: new GraphQLNonNull(GraphQLFloat) },
                 tax:  { type: new GraphQLNonNull(GraphQLFloat) },
                 total:  { type: new GraphQLNonNull(GraphQLFloat) },
-                workingDaysInMonth:  { type: new GraphQLNonNull(GraphQLFloat) },
-                dateOfEntry:  { type: new GraphQLNonNull(GraphQLDate) },
-                dateOfModify:  { type: new GraphQLNonNull(GraphQLDate) },
+                workingDaysInMonth:  { type: new GraphQLNonNull(GraphQLFloat) }
+
         },
         resolve: Salary.updateEntry.bind(Salary)
     },

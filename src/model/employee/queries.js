@@ -14,6 +14,7 @@ module.exports = {
   employee: {
     type: new GraphQLList(type),
     args: {
+      id:  { type: GraphQLID },
       name: {
         type: GraphQLString,
       },

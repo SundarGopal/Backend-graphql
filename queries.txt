@@ -43,7 +43,7 @@ dateOfModify
   #show all leave entries
 
 
-  {
+query  {
   leaves{
    id,
 employeeId,

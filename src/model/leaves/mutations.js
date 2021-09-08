@@ -15,28 +15,23 @@ module.exports = {
         type,
         args: {
 
-              id:  { type: new GraphQLNonNull(GraphQLID) },
                 employeeId:  { type: new GraphQLNonNull(GraphQLID) },
                 startDate:  { type: new GraphQLNonNull(GraphQLDate) },
                 endDate:  { type: new GraphQLNonNull(GraphQLDate) },
                 count:  { type: new GraphQLNonNull(GraphQLFloat) },
-                  Year:  { type: new GraphQLNonNull(GraphQLString) },
-                      dateOfEntry:  { type: new GraphQLNonNull(GraphQLDate) },
-                      dateOfModify:  { type: new GraphQLNonNull(GraphQLDate) },
+                  year:  { type: new GraphQLNonNull(GraphQLString) }
         },
         resolve: Leave.createEntry.bind(Leave)
     },
     updateLeave: {
         type,
         args: {
-          id:  { type: new GraphQLNonNull(GraphQLID) },
+          id:  { type: GraphQLID },
           employeeId:  { type: new GraphQLNonNull(GraphQLID) },
           startDate:  { type: new GraphQLNonNull(GraphQLDate) },
           endDate:  { type: new GraphQLNonNull(GraphQLDate) },
           count:  { type: new GraphQLNonNull(GraphQLFloat) },
-            Year:  { type: new GraphQLNonNull(GraphQLString) },
-                dateOfEntry:  { type: new GraphQLNonNull(GraphQLDate) },
-                dateOfModify:  { type: new GraphQLNonNull(GraphQLDate) },
+            year:  { type: new GraphQLNonNull(GraphQLString) },
         },
         resolve: Leave.updateEntry.bind(Leave)
     },

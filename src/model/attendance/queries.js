@@ -20,8 +20,8 @@ module.exports = {
       id: { type: GraphQLID },
       employeeId:  { type: GraphQLID },
       date:  { type: GraphQLDate },
-      inTimeDate:  { type: GraphQLDate },
-      outTime: { type: GraphQLDate},
+      inTimeDate:  { type: GraphQLString },
+      outTime: { type: GraphQLString},
       totalHours: { type: GraphQLFloat },
     },
     resolve: Attendance.findMatching.bind(Attendance)
@@ -29,7 +29,7 @@ module.exports = {
   attendance: {
     type,
     args: {
-      id: {
+      employeeId: {
         type: GraphQLID
       }
     },
