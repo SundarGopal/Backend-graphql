@@ -71,3 +71,59 @@ totalHours
   }
 }
 
+# employee search by id;
+
+query{
+  employer(id:2){
+id,
+name,
+email,
+address,
+  dateOfBirth,
+  dateOfJoining,
+  education,
+  type,
+  role,
+  password,
+  dateOfEntry,
+  dateOfModify}
+}
+
+# salary search by id
+
+query{
+  salary(id:1){
+ id,
+    employeeId,
+    monthYear,basic,
+    hra,
+    lta,
+    variable,
+    bonus,
+    TDS,
+    tax,
+    total,
+    workingDaysInMonth,
+    dateOfEntry,
+    dateOfModify,
+
+
+  }}
+
+  # leave by id;
+
+  query{
+  leave(id:1){
+ id,
+    employeeId,startDate,
+    endDate,
+    count,year,
+    dateOfEntry,dateOfModify,
+   
+
+
+  }}
+
+  # attendance by id;
+
+  
