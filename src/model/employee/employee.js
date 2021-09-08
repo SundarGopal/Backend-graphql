@@ -1,13 +1,13 @@
 const DAO = require('../../lib/dao')
 const mySQLWrapper = require('../../lib/mysqlWrapper')
 
-class Customer extends DAO {
+class Employee extends DAO {
 
     /**
      * Overrides TABLE_NAME with this class' backing table at MySQL
      */
     static get TABLE_NAME() {
-        return 'customer'
+        return 'employee'
     }
 
     /**
@@ -34,12 +34,12 @@ class Customer extends DAO {
     /**
      * Creates a new bacon
      */
-    static async createEntry(_, {name,address,email,phone,dob}) {
+    static async createEntry(_, {name,email,address,dateOfBirth,dateOfJoining,education,type,role,password,dateOfEntry,dateOfModify}) {
         const connection = await mySQLWrapper.getConnectionFromPool()
         try {
             let _result = await this.insert(connection, {
                 data: {
-                    name,address,email,phone,dob
+                    name,email,address,dateOfBirth,dateOfJoining,education,type,role,password,dateOfEntry,dateOfModify
                 }
             })
 
@@ -53,14 +53,14 @@ class Customer extends DAO {
     /**
      * Updates a bacon
      */
-    static async updateEntry(_, {id, name,address,email,phone,dob}) {
+    static async updateEntry(_, {id, name,email,address,dateOfBirth,dateOfJoining,education,type,role,password,dateOfEntry,dateOfModify}) {
         const connection = await mySQLWrapper.getConnectionFromPool()
         try {
 
             await this.update(connection, {
                 id,
                 data: {
-                  name,address,email,phone,dob
+                  name,email,address,dateOfBirth,dateOfJoining,education,type,role,password,dateOfEntry,dateOfModify
                 }
             })
 
@@ -70,14 +70,14 @@ class Customer extends DAO {
             if (connection != null) connection.release()
         }
     }
-    static async deleteEntry(_, {id,name,address,email,phone,dob}) {
+    static async deleteEntry(_, {id,name,email,address,dateOfBirth,dateOfJoining,education,type,role,password,dateOfEntry,dateOfModify}) {
         const connection = await mySQLWrapper.getConnectionFromPool()
         try {
 
             await this.delete(connection, {
                 id,
                 data: {
-                    name,address,email,phone,dob
+                    name,email,address,dateOfBirth,dateOfJoining,education,type,role,password,dateOfEntry,dateOfModify
                 }
             })
 

@@ -1,11 +1,11 @@
 const { GraphQLObjectType } = require('graphql')
-const customerMutation = require('../model/customer/mutations')
+const employeeMutation = require('../model/employee/mutations')
 
 module.exports = new GraphQLObjectType({
     name: 'RootMutationsType',
     fields: {
-        addCustomer: customerMutation.addCustomer,
-        updateCustomer: customerMutation.updateCustomer,
-        deleteCustomer: customerMutation.deleteCustomer
+        addEmployee: customerMutation.addEmployee,
+        updateEmployee: customerMutation.updateEmployee,
+        deleteEmployee: customerMutation.deleteEmployee
     }
 })

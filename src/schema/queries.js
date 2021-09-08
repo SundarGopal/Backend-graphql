@@ -1,10 +1,10 @@
 const { GraphQLObjectType } = require('graphql')
-const customerQueries = require('../model/customer/queries')
+const employeeQueries = require('../model/employee/queries')
 
 module.exports = new GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
-        customer: customerQueries.customer,
-        customers: customerQueries.customers
+        employer: customerQueries.employer,
+        employee: customerQueries.employee
     }
 })

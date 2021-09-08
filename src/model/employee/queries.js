@@ -7,40 +7,58 @@ const {
 } = require('graphql')
 const type = require('./type')
 const mutation = require('./mutations')
-const Customer = require("./customer")
+const Employee = require("./employee")
 var GraphQLDate = require('graphql-date');
 
 // Defines the queries
 module.exports = {
-  customers: {
+  employee: {
     type: new GraphQLList(type),
     args: {
 
       name: {
         type: GraphQLString
       },
-      address: {
-        type: GraphQLString
-      },
       email: {
         type: GraphQLString
       },
-      phone: {
+      address: {
         type: GraphQLString
       },
-      dob: {
+      dateOfBirth: {
         type: GraphQLDate
-      }
+      },
+      dateOfJoining: {
+        type: GraphQLDate
+      },
+      education: {
+        type: GraphQLString
+      },
+      type: {
+        type: GraphQLString
+      },
+      role: {
+        type: GraphQLString
+      },
+      password: {
+        type: GraphQLString
+      },
+      dateOfEntry: {
+        type: GraphQLDate
+      },
+      dateOfModify: {
+        type: GraphQLDate
+      },
     },
-    resolve: Customer.findMatching.bind(Customer)
+    resolve: Employee.findMatching.bind(Employee)
   },
-  customer: {
+  employer: {
     type,
     args: {
       id: {
         type: GraphQLID
       }
     },
-    resolve: Customer.getByID.bind(Customer)
+    resolve: Employee.getByID.bind(Employee)
   }
 }
