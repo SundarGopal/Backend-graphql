@@ -1,4 +1,4 @@
-const graphqlHTTP = require('express-graphql')
+const {graphqlHTTP} = require('express-graphql')
 const router = require('express').Router()
 const util = require('../util/util')
 const schema = require('../schema/index')

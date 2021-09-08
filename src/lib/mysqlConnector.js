@@ -4,7 +4,7 @@ class MySQLConnector {
 
     //This constant-like getters will be used to connect to MySQL
     get MYSQL_DB_USER() { return process.env.MYSQL_DB_USER || 'root' }
-    get MYSQL_DB_NAME() { return process.env.MYSQL_DB_NAME || 'graphql' }
+    get MYSQL_DB_NAME() { return process.env.MYSQL_DB_NAME || 'HRMIS' }
     get MYSQL_DB_PASSWORD() { return '123123' }
     get MYSQL_DB_ADDRESS() { return process.env.MYSQL_DB_ADDRESS || 'localhost' }
     get MYSQL_DB_POOL_SIZE() { return process.env.MYSQL_DB_POOL_SIZE || 10 }
