@@ -90,4 +90,4 @@ class Employee extends DAO {
 
 }
 
-module.exports = Customer
+module.exports = Employee

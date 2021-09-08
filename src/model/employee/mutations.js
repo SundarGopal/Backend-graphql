@@ -6,12 +6,12 @@ const {
     GraphQLFloat
 } = require('graphql')
 const type = require('./type')
-const Attendance = require('./attendance')
+const Employee = require('./employee')
 var GraphQLDate = require('graphql-date');
 
 // Defines the mutations
 module.exports = {
-    addAttendance: {
+    addEmployee: {
         type,
         args: {
           id: { type: new GraphQLNonNull(GraphQLString) },
@@ -52,7 +52,7 @@ module.exports = {
         args: {
             id:     { type: GraphQLID },
           },
-        resolve: Customer.deleteEntry.bind(Customer)
+        resolve: Employee.deleteEntry.bind(Employee)
     },
 
 
