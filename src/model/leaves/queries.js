@@ -17,13 +17,13 @@ module.exports = {
     args: {
 
       id:  { type: new GraphQLID },
-                employeeId:  { type: new GraphQLID },
-                startDate:  { type: new GraphQLDate },
-                endDate:  { type: new GraphQLDate },
-                count:  { type: new GraphQLFloat },
-                  Year:  { type: new GraphQLString },
-                      dateOfEntry:  { type: new GraphQLDate },
-                      dateOfModify:  { type: new GraphQLDate },
+                employeeId:  { type:  GraphQLID },
+                startDate:  { type:  GraphQLDate },
+                endDate:  { type: GraphQLDate },
+                count:  { type:  GraphQLFloat },
+                  Year:  { type: GraphQLString },
+                      dateOfEntry:  { type:  GraphQLDate },
+                      dateOfModify:  { type: GraphQLDate },
     },
     resolve: Leave.findMatching.bind(Leave)
   },

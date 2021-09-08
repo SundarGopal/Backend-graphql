@@ -17,12 +17,12 @@ module.exports = {
     type: new GraphQLList(type),
     args: {
 
-      id: { type: new GraphQLID },
-      employeeId:  { type: new GraphQLID },
-      date:  { type: new GraphQLDate },
-      inTimeDate:  { type: new GraphQLDate },
-      outTime: { type: new GraphQLDate},
-      totalHours: { type: new GraphQLFloat },
+      id: { type: GraphQLID },
+      employeeId:  { type: GraphQLID },
+      date:  { type: GraphQLDate },
+      inTimeDate:  { type: GraphQLDate },
+      outTime: { type: GraphQLDate},
+      totalHours: { type: GraphQLFloat },
     },
     resolve: Attendance.findMatching.bind(Attendance)
   },

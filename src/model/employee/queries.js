@@ -3,62 +3,60 @@ const {
   GraphQLID,
   GraphQLString,
   GraphQLFloat,
-
-} = require('graphql')
-const type = require('./type')
-const mutation = require('./mutations')
-const Employee = require("./employee")
-var GraphQLDate = require('graphql-date');
+} = require("graphql");
+const type = require("./type");
+const mutation = require("./mutations");
+const Employee = require("./employee");
+var GraphQLDate = require("graphql-date");
 
 // Defines the queries
 module.exports = {
   employee: {
     type: new GraphQLList(type),
     args: {
-
       name: {
-        type: GraphQLString
+        type: GraphQLString,
       },
       email: {
-        type: GraphQLString
+        type: GraphQLString,
       },
       address: {
-        type: GraphQLString
+        type: GraphQLString,
       },
       dateOfBirth: {
-        type: GraphQLDate
+        type: GraphQLDate,
       },
       dateOfJoining: {
-        type: GraphQLDate
+        type: GraphQLDate,
       },
       education: {
-        type: GraphQLString
+        type: GraphQLString,
       },
       type: {
-        type: GraphQLString
+        type: GraphQLString,
       },
       role: {
-        type: GraphQLString
+        type: GraphQLString,
       },
       password: {
-        type: GraphQLString
+        type: GraphQLString,
       },
       dateOfEntry: {
-        type: GraphQLDate
+        type: GraphQLDate,
       },
       dateOfModify: {
-        type: GraphQLDate
+        type: GraphQLDate,
       },
     },
-    resolve: Employee.findMatching.bind(Employee)
+    resolve: Employee.findMatching.bind(Employee),
   },
   employer: {
     type,
     args: {
       id: {
-        type: GraphQLID
-      }
+        type: GraphQLID,
+      },
     },
-    resolve: Employee.getByID.bind(Employee)
-  }
-}
+    resolve: Employee.getByID.bind(Employee),
+  },
+};
