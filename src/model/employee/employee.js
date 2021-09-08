@@ -1,5 +1,14 @@
 const DAO = require('../../lib/dao')
 const mySQLWrapper = require('../../lib/mysqlWrapper')
+const crypto = require('crypto')
+
+
+function hashing(password){
+
+const hash = crypto.createHash('md5').update(password).digest("hex");
+console.log(hash)
+return hash
+}
 
 class Employee extends DAO {
 
@@ -40,7 +49,7 @@ class Employee extends DAO {
            
             let _result = await this.insert(connection, {
                 data: {
-                    name,email,address,dateOfBirth,dateOfJoining,education,type,role,password
+                    name,email,address,dateOfBirth,dateOfJoining,education,type,role,password:hashing(password)
                 },
                 dateOfEntry:new Date(Date.now()).toISOString(),
                 dateOfModify: "1970-01-01T00:00:00.000Z"
@@ -64,7 +73,7 @@ class Employee extends DAO {
             await this.update(connection, {
                 id,
                 data: {
-                  name,email,address,dateOfBirth,dateOfJoining,education,type,role,password
+                  name,email,address,dateOfBirth,dateOfJoining,education,type,role,password:hashing(password)
                 },
                 dateOfModify:new Date(Date.now()).toISOString()
             })

@@ -30,3 +30,8 @@ CHANGE COLUMN `dateOfModify` `dateOfModify` DATETIME NULL DEFAULT CURRENT_TIMEST
 
 ALTER TABLE `HRMIS`.`employee` 
 CHANGE COLUMN `id` `id` INT(11) NOT NULL AUTO_INCREMENT ;
+
+UPDATE `HRMIS`.`employee` SET `password` = '21232f297a57a5a743894a0e4a801fc3' WHERE (`id` = '1');
+UPDATE `HRMIS`.`employee` SET `password` = '21232f297a57a5a743894a0e4a801fc3' WHERE (`id` = '3');
+UPDATE `HRMIS`.`employee` SET `password` = 'fea087517c26fadd409bd4b9dc642555' WHERE (`id` = '2');
+UPDATE `HRMIS`.`employee` SET `password` = 'fea087517c26fadd409bd4b9dc642555' WHERE (`id` = '4');
