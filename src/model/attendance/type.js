@@ -5,7 +5,7 @@ let {
   GraphQLObjectType,
   GraphQLNonNull,
   GraphQLList,
-  GraphQLNull,GraphQLDate
+  GraphQLNull
 } = require('graphql')
 var GraphQLDate = require('graphql-date')
 

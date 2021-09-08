@@ -13,7 +13,7 @@ var GraphQLDate = require('graphql-date');
 
 // Defines the queries
 module.exports = {
-  attendance: {
+  attendances: {
     type: new GraphQLList(type),
     args: {
 

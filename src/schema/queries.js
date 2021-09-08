@@ -10,7 +10,10 @@ module.exports = new GraphQLObjectType({
         employer: employeeQueries.employer,
         employee: employeeQueries.employee,
         salaries: salariesQueries.salaries,
+        salary: salariesQueries.salary,
         leaves: leavesQueries.leaves,
+        leave:leavesQueries.leave,
+        attendances:attendanceQueries.attendances,
         attendance:attendanceQueries.attendance
     }
 })
