@@ -1,0 +1,41 @@
+
+#show employee table entries
+
+query{
+  employee{
+ id
+name,
+email,
+address,
+dateOfBirth,
+dateOfJoining,
+education,
+type,
+role,
+password,
+dateOfEntry,
+dateOfModify
+
+  }}
+
+
+#show salaries entry
+
+query {
+  salaries {
+    id,
+  employeeId,
+monthYear,
+basic,
+hra,
+lta,
+variable,
+bonus,
+TDS,
+tax,
+total,
+workingDaysInMonth,
+dateOfEntry,
+dateOfModify
+
+  }}
