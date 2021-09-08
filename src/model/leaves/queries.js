@@ -16,12 +16,12 @@ module.exports = {
     type: new GraphQLList(type),
     args: {
 
-      id:  { type: new GraphQLID },
+      id:  { type: GraphQLID },
                 employeeId:  { type:  GraphQLID },
                 startDate:  { type:  GraphQLDate },
                 endDate:  { type: GraphQLDate },
                 count:  { type:  GraphQLFloat },
-                  Year:  { type: GraphQLString },
+                  year:  { type: GraphQLString },
                       dateOfEntry:  { type:  GraphQLDate },
                       dateOfModify:  { type: GraphQLDate },
     },

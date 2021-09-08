@@ -19,7 +19,7 @@ module.exports = new GraphQLObjectType({
                 startDate:  { type: new GraphQLNonNull(GraphQLDate) },
                 endDate:  { type: new GraphQLNonNull(GraphQLDate) },
                 count:  { type: new GraphQLNonNull(GraphQLFloat) },
-                  Year:  { type: new GraphQLNonNull(GraphQLString) },
+                  year:  { type: new GraphQLNonNull(GraphQLString) },
                       dateOfEntry:  { type: new GraphQLNonNull(GraphQLDate) },
                       dateOfModify:  { type: new GraphQLNonNull(GraphQLDate) },
   })
