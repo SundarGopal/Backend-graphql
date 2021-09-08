@@ -18,3 +18,7 @@ INSERT INTO `leaves` (`id`, `employeeId`, `startDate`, `endDate`, `count`, `year
 INSERT INTO `leaves` (`id`, `employeeId`, `startDate`, `endDate`, `count`, `year`) VALUES ('4', '3', '2020-08-06', '2020-08-07', '2', '2020');
 INSERT INTO `leaves` (`id`, `employeeId`, `startDate`, `endDate`, `count`, `year`) VALUES ('5', '2', '2020-09-16', '2020-09-17', '2', '2020');
 
+ALTER TABLE `HRMIS`.`leaves` 
+CHANGE COLUMN `id` `id` INT(11) NOT NULL AUTO_INCREMENT ,
+CHANGE COLUMN `dateOfEntry` `dateOfEntry` DATETIME NULL DEFAULT CURRENT_TIMESTAMP ,
+CHANGE COLUMN `dateOfModify` `dateOfModify` DATETIME NULL DEFAULT CURRENT_TIMESTAMP ;

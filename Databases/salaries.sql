@@ -41,3 +41,22 @@ UPDATE `HRMIS`.`salaries` SET `tax` = '2000' WHERE (`id` = '4');
 UPDATE `HRMIS`.`salaries` SET `tax` = '3000' WHERE (`id` = '5');
 UPDATE `HRMIS`.`salaries` SET `tax` = '3000' WHERE (`id` = '6');
 UPDATE `HRMIS`.`salaries` SET `tax` = '2000' WHERE (`id` = '7');
+
+
+ALTER TABLE `HRMIS`.`salaries` 
+CHANGE COLUMN `dateOfEntry` `dateOfEntry` DATETIME NULL DEFAULT CURRENT_TIMESTAMP ,
+CHANGE COLUMN `dateOfModify` `dateOfModify` DATETIME NULL DEFAULT CURRENT_TIMESTAMP ;
+
+ALTER TABLE `HRMIS`.`salaries` 
+DROP COLUMN `monthYear`;
+
+ALTER TABLE `HRMIS`.`salaries` 
+ADD COLUMN `monthYear` VARCHAR(45) NOT NULL AFTER `employeeId`;
+
+UPDATE `HRMIS`.`salaries` SET `monthYear` = 'Feb 2021' WHERE (`id` = '1');
+UPDATE `HRMIS`.`salaries` SET `monthYear` = 'Mar 2021' WHERE (`id` = '2');
+UPDATE `HRMIS`.`salaries` SET `monthYear` = 'Apr 2020' WHERE (`id` = '3');
+UPDATE `HRMIS`.`salaries` SET `monthYear` = 'May 2020' WHERE (`id` = '4');
+UPDATE `HRMIS`.`salaries` SET `monthYear` = 'Jan 2020' WHERE (`id` = '5');
+UPDATE `HRMIS`.`salaries` SET `monthYear` = 'Feb 2020' WHERE (`id` = '6');
+UPDATE `HRMIS`.`salaries` SET `monthYear` = 'Dec 2020' WHERE (`id` = '7');

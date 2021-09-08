@@ -26,3 +26,5 @@ INSERT INTO `HRMIS`.`attendance` (`id`, `employeeId`, `date`, `inTimeDate`, `out
 INSERT INTO `HRMIS`.`attendance` (`id`, `employeeId`, `date`, `inTimeDate`, `outTime`, `totalHours`) VALUES ('9', '4', '2020-12-13', '08:00', '15:00', '7');
 INSERT INTO `HRMIS`.`attendance` (`id`, `employeeId`, `date`, `inTimeDate`, `outTime`, `totalHours`) VALUES ('10', '4', '2020-12-14', '09:00', '16:00', '7');
 
+ALTER TABLE `HRMIS`.`attendance` 
+CHANGE COLUMN `id` `id` INT(11) NOT NULL AUTO_INCREMENT ;
