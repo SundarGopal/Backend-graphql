@@ -13,7 +13,7 @@ var GraphQLDate = require('graphql-date')
 module.exports = new GraphQLObjectType({
   name: 'Attendance',
   description: 'attendance',
-  fields:{
+  fields:()=>( {
     id: { type: new GraphQLNonNull(GraphQLID) },
     employeeId:  { type: new GraphQLNonNull(GraphQLID) },
     date:  { type: new GraphQLNonNull(GraphQLDate) },

@@ -13,7 +13,7 @@ var GraphQLDate = require('graphql-date')
 module.exports = new GraphQLObjectType({
   name: 'Employee',
   description: 'A employee',
-  fields:{
+  fields:()=>( {
     id: {
       type: new GraphQLNonNull(GraphQLID)
     },name: { type: new GraphQLNonNull(GraphQLString) },
@@ -27,5 +27,6 @@ module.exports = new GraphQLObjectType({
     password: { type: new GraphQLNonNull(GraphQLString) },
     dateOfEntry:  { type: new GraphQLNonNull(GraphQLDate) },
     dateOfModify:  { type: new GraphQLNonNull(GraphQLDate) }
+
   })
 })
