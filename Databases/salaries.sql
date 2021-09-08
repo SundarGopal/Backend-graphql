@@ -1,3 +1,5 @@
+USE `HRMIS`;
+
 CREATE TABLE `salaries` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `employeeId` INT NOT NULL,
