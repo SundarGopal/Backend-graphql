@@ -55,3 +55,19 @@ dateOfEntry,
 dateOfModify,
 }
 }
+
+
+
+#show all attendance entries
+
+query{
+  attendances{
+id,
+employeeId
+date
+inTimeDate
+outTime
+totalHours
+  }
+}
+
