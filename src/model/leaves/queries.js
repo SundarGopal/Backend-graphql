@@ -16,14 +16,14 @@ module.exports = {
     type: new GraphQLList(type),
     args: {
 
-      id:  { type: new GraphQLNonNull(GraphQLID) },
-                employeeId:  { type: new GraphQLNonNull(GraphQLID) },
-                startDate:  { type: new GraphQLNonNull(GraphQLDate) },
-                endDate:  { type: new GraphQLNonNull(GraphQLDate) },
-                count:  { type: new GraphQLNonNull(GraphQLFloat) },
-                  Year:  { type: new GraphQLNonNull(GraphQLString) },
-                      dateOfEntry:  { type: new GraphQLNonNull(GraphQLDate) },
-                      dateOfModify:  { type: new GraphQLNonNull(GraphQLDate) },
+      id:  { type: new GraphQLID },
+                employeeId:  { type: new GraphQLID },
+                startDate:  { type: new GraphQLDate },
+                endDate:  { type: new GraphQLDate },
+                count:  { type: new GraphQLFloat },
+                  Year:  { type: new GraphQLString },
+                      dateOfEntry:  { type: new GraphQLDate },
+                      dateOfModify:  { type: new GraphQLDate },
     },
     resolve: Leave.findMatching.bind(Leave)
   },
