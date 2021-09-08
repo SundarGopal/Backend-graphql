@@ -1,6 +1,6 @@
 USE `HRMIS`;
 
-CREATE TABLE `salaries` (
+CREATE TABLE  IF NOT EXISTS `salaries` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `employeeId` INT NOT NULL,
   `monthYear` DATE NOT NULL,
