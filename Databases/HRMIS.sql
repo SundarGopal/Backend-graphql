@@ -21,7 +21,7 @@ CREATE TABLE `employee` (
 
 INSERT INTO `employee` (`id`,`name`,`email`,`address`,`dateOfBirth`,`dateOfJoining`,`education`,`type`,`role`,`password`,`dateOfEntry`,`dateOfModify`) VALUES (1,"John Prawl","john.prawl@yara.com","United Kingdom","1993-07-07","2021-01-01","B.Tech","engineer","admin","admin","2021-09-08 12:55:21","2021-09-08 12:55:21");
 INSERT INTO `employee` (`id`,`name`,`email`,`address`,`dateOfBirth`,`dateOfJoining`,`education`,`type`,`role`,`password`,`dateOfEntry`,`dateOfModify`) VALUES (2,"Sheila","sheila@yara.com","Norway","1995-05-05","2020-03-03","MS, PhD","contract","normal","normal","2021-09-08 12:55:21","2021-09-08 12:55:21");
-INSERT INTO `employee` (`id`,`name`,`email`,`address`,`dateOfBirth`,`dateOfJoining`,`education`,`type`,`role`,`password`,`dateOfEntry`,`dateOfModify`) VALUES (3,"Dwight","dwight@yara.com","San Jose","1989-09-27","2020-01-01","MBA","manager","admiin","admin","2021-09-08 12:55:21","2021-09-08 12:55:21");
+INSERT INTO `employee` (`id`,`name`,`email`,`address`,`dateOfBirth`,`dateOfJoining`,`education`,`type`,`role`,`password`,`dateOfEntry`,`dateOfModify`) VALUES (3,"Dwight","dwight@yara.com","San Jose","1989-09-27","2020-01-01","MBA","manager","admin","admin","2021-09-08 12:55:21","2021-09-08 12:55:21");
 INSERT INTO `employee` (`id`,`name`,`email`,`address`,`dateOfBirth`,`dateOfJoining`,`education`,`type`,`role`,`password`,`dateOfEntry`,`dateOfModify`) VALUES (4,"Rene","rene@yara.com","Berlin","1992-07-30","2020-12-12","MS","support","normal","normal","2021-09-08 12:55:21","2021-09-08 12:55:21");
 
 ALTER TABLE `HRMIS`.`employee` 
