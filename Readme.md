@@ -10,9 +10,10 @@
 
 - Clone the repo using the following command:
 
-`git clone https://github.com/sundar-gopal/Backend-graphql.git`
+    `git clone https://github.com/sundar-gopal/Backend-graphql.git`
 
--Install the dependencies:
+- Install the dependencies:
+
     `npm install`
 
 <br>
@@ -32,10 +33,12 @@
 File_path='' #ADD THE PATH TO THE CLONED Backend-graphql REPOSITORY
 `````
 - Give execution permission to the edited file
-`chmod +x CreateDatabase.sh`
+
+    `chmod +x CreateDatabase.sh`
 
 - Run the script file
-`./CreateDatabase.sh`
+
+    `./CreateDatabase.sh`
 
 - Follow along the execution.
 
@@ -48,9 +51,14 @@ Alternatively you can source each of the `.sql` files to your sql local server
 Follow the steps given below in the same order
 
 - Run your sql server
-`/usr/local/mysql/bin/mysql -u root -p`
+
+    `/usr/local/mysql/bin/mysql -u root -p`
 - Source each of the `.sql` file in the `Databases` folder sequencially. Follow the commands sequencially :
-`source <path of HRMIS.sql file>`
-`source <path of salaries.sql file>`
-`source <path of leaves.sql file>`
-`source <path of attendance.sql file>`
+
+    `source <path of HRMIS.sql file>`
+
+    `source <path of salaries.sql file>`
+
+    `source <path of leaves.sql file>`
+
+    `source <path of attendance.sql file>`
