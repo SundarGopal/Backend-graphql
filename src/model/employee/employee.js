@@ -1,7 +1,9 @@
 const DAO = require('../../lib/dao')
 const mySQLWrapper = require('../../lib/mysqlWrapper')
 const crypto = require('crypto')
+const jwt = require('jsonwebtoken');
 
+require("dotenv").config();
 
 function hashing(password){
 
@@ -102,6 +104,34 @@ class Employee extends DAO {
         }
     }
 
+    static async signIn(_,fields) {//email,role,password
+
+        const connection = await mySQLWrapper.getConnectionFromPool()
+        //var fields = {email :email,role : role,password : hashing(password)} 
+        console.log(fields)
+        
+        fields.password = hashing(fields.password)
+
+        if (Object.keys(fields).length === 0){console.log("ERROR EMPTY");return 0;}
+      
+        try {
+            const user = await this.findByFields({fields})
+            console.log(user)
+            
+            if(user==''){
+                return [{id:'Failed Authentication'}]
+            }
+            console.log("CREATING HASH")
+            let hash = jwt.sign({},"" + process.env.JWT_KEY)
+            let val = {hash}
+            return [{id:jwt.sign({email: user.email },"" + process.env.JWT_KEY)}]
+        
+        } finally {
+            // Releases the connection
+            if (connection != null) connection.release()
+        }
+        
+    } 
 }
 
 module.exports = Employee

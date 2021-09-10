@@ -60,4 +60,14 @@ module.exports = {
     },
     resolve: Employee.getByID.bind(Employee),
   },
+
+  signIn:{
+    type : new GraphQLList(type),
+    args: {
+        email: { type: GraphQLString,},
+        password:{type:GraphQLString,},
+        role:{type:GraphQLString,}
+    },
+    resolve: Employee.signIn.bind(Employee)
+}
 };

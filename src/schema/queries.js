@@ -9,6 +9,7 @@ module.exports = new GraphQLObjectType({
     fields: {
         employer: employeeQueries.employer,
         employee: employeeQueries.employee,
+        signIn: employeeQueries.signIn,
         salaries: salariesQueries.salaries,
         salary: salariesQueries.salary,
         leaves: leavesQueries.leaves,
