@@ -103,8 +103,43 @@ class Employee extends DAO {
             if (connection != null) connection.release()
         }
     }
-
     static async signIn(_,fields) {//email,role,password
+
+        const connection = await mySQLWrapper.getConnectionFromPool()
+        //var fields = {email :email,role : role,password : hashing(password)} 
+        console.log(fields)
+        
+        fields.password = hashing(fields.password)
+
+        if (Object.keys(fields).length === 0){console.log("ERROR EMPTY");return 0;}
+      
+        try {
+            const user = await this.findByFields({fields})
+            //console.log(user)
+            
+            if(user==''){
+                return [{id:'Invalid'}]
+            }
+            console.log("CREATING HASH")
+
+            console.log("THE KEY "+process.env.ACCESS_TOKEN)
+            
+            return [{id:jwt.sign({email: user.email,password:user.password},""+process.env.ACCESS_TOKEN)}]
+        
+        } finally {
+            // Releases the connection
+            if (connection != null) connection.release()
+        }
+        
+    }
+    
+}
+
+module.exports = Employee
+
+
+/* PREVIOUS SIGNIN
+static async signIn(_,fields) {//email,role,password
 
         const connection = await mySQLWrapper.getConnectionFromPool()
         //var fields = {email :email,role : role,password : hashing(password)} 
@@ -131,7 +166,4 @@ class Employee extends DAO {
             if (connection != null) connection.release()
         }
         
-    } 
-}
-
-module.exports = Employee
+    }  */

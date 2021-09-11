@@ -1,7 +1,10 @@
+require("dotenv").config();
 const express = require('express')
 const bodyParser = require('body-parser')
 const Routes = require('./routes')
 const cors=require("cors")
+const jwt = require('jsonwebtoken');
+
 class App {
 
     /**
@@ -31,6 +34,28 @@ class App {
         //Allows the server to parse json
         this.expressApp.use(bodyParser.json())
         this.expressApp.use(cors())
+
+        this.expressApp.use((req,res,next)=>{
+            console.log("IN MIDDLEWARE")
+            let token = req.headers["authorization"]
+            if (token == '') {
+                console.log("HEADER EMPTY")
+                next();
+            }
+            else{
+            jwt.verify(token,process.env.ACCESS_TOKEN,(err,user)=>{
+                if(err) 
+                {
+                    console.log("FORBIDDEN")
+                    res.sendStatus(401)
+                }
+                else { 
+                    console.log("VERIFIED")
+                    next();
+                }
+            })
+        }
+    })
 
         //Registers the routes used by the app
         new Routes(this.expressApp)
