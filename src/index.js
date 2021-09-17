@@ -38,7 +38,7 @@ class App {
         this.expressApp.use((req,res,next)=>{
             console.log("IN MIDDLEWARE")
             let token = req.headers["authorization"]
-            if (token == undefined) {
+            if (token == '') {
                 console.log("HEADER EMPTY")
                 next();
             }
