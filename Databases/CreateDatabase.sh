@@ -1,6 +1,6 @@
 #!/bin/bash
 
-File_path='/Users/a845608yara.com/Training/Git-Projects' #ADD THE PATH TO THE CLONED REPOSITORY
+File_path='/Users/<Your Username>/<location to cloned repo>' #ADD THE PATH TO THE CLONED REPOSITORY
 
 echo "Creating database HRMIS and creating table employee"
 echo "Enter Mysql password"
