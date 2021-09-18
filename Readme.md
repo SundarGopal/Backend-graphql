@@ -97,6 +97,14 @@ Follow the steps given below in the same order
     `yarn start`
 
 > By default the frontend runs on localhost:3000
+
+## Quick login
+> Email : dwight@yara.com
+> 
+> Password : Dwight
+>
+> Role : Admin
+
 ## Troubleshooting
 
 - Unable to access database
